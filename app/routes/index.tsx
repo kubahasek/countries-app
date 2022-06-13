@@ -1,7 +1,7 @@
 import { Theme, useTheme } from "utils/theme-provider";
 
 export default function Index() {
-  const [, setTheme] = useTheme();
+  const [theme, setTheme] = useTheme();
   const toggleTheme = () => {
     setTheme((prevTheme) =>
       prevTheme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT
@@ -12,14 +12,19 @@ export default function Index() {
     <div>
       <nav className="flex shadow-lg p-7 justify-between">
         <div>
-          <h1 className="text-2xl font-bold">Where in the world?</h1>
+          <h1 className="text-2xl font-bold text-darktext dark:text-white">
+            Where in the world?
+          </h1>
         </div>
         <div>
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            onClick={toggleTheme}
-          />
-          <h3>Dark mode</h3>
+          {theme === Theme.DARK ? (
+            <i className="fa-solid fa-moon text-darktext dark:text-white"></i>
+          ) : (
+            <i className="fa-solid fa-sun text-darktext dark:text-white"></i>
+          )}
+          <button className="ml-2" onClick={toggleTheme}>
+            <h3 className="text-darktext dark:text-white">Dark mode</h3>
+          </button>
         </div>
       </nav>
     </div>

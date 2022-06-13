@@ -27,6 +27,10 @@ function App() {
       <head>
         <Meta />
         <Links />
+        <script
+          src="https://kit.fontawesome.com/e58aedf901.js"
+          crossOrigin="anonymous"
+        ></script>
       </head>
       <body className="bg-lightgray dark:bg-darkbg">
         <Outlet />

@@ -468,6 +468,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-sepia:  ;
 }
 
+.ml-4 {
+  margin-left: 1rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
 .flex {
   display: flex;
 }
@@ -513,6 +521,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: hsl(0 0% 100% / var(--tw-text-opacity));
 }
 
+.text-darktext {
+  --tw-text-opacity: 1;
+  color: hsl(200 15% 8% / var(--tw-text-opacity));
+}
+
 .shadow-lg {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
@@ -522,4 +535,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .dark .dark\:bg-darkbg {
   --tw-bg-opacity: 1;
   background-color: hsl(207 26% 17% / var(--tw-bg-opacity));
+}
+
+.dark .dark\:text-white {
+  --tw-text-opacity: 1;
+  color: hsl(0 0% 100% / var(--tw-text-opacity));
 }
