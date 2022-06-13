@@ -1,3 +1,5 @@
+import { Theme, ThemeProvider, useTheme } from "../utils/theme-provider";
+import clsx from "clsx";
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import styles from "./tailwind.css";
 import {
@@ -17,19 +19,29 @@ export const meta: MetaFunction = () => ({
 
 export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
-export default function App() {
+function App() {
+  const [theme] = useTheme();
+
   return (
-    <html lang="en">
+    <html lang="en" className={clsx(theme)}>
       <head>
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="bg-lightgray dark:bg-darkbg">
         <Outlet />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
       </body>
     </html>
+  );
+}
+
+export default function AppWithProviders() {
+  return (
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
   );
 }

@@ -1,32 +1,27 @@
+import { Theme, useTheme } from "utils/theme-provider";
+
 export default function Index() {
+  const [, setTheme] = useTheme();
+  const toggleTheme = () => {
+    setTheme((prevTheme) =>
+      prevTheme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT
+    );
+  };
+
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h1 className="">Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
+    <div>
+      <nav className="flex shadow-lg p-7 justify-between">
+        <div>
+          <h1 className="text-2xl font-bold">Where in the world?</h1>
+        </div>
+        <div>
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            onClick={toggleTheme}
+          />
+          <h3>Dark mode</h3>
+        </div>
+      </nav>
     </div>
   );
 }
