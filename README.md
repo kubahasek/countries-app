@@ -1,34 +1,66 @@
-# Welcome to Remix!
+# Frontend Mentor - REST Countries API with color theme switcher solution
 
-- [Remix Docs](https://remix.run/docs)
+This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Deployment
+## Table of contents
 
-After having run the `create-remix` command and selected "Vercel" as a deployment target, you only need to [import your Git repository](https://vercel.com/new) into Vercel, and it will be deployed.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-If you'd like to avoid using a Git repository, you can also deploy the directory by running [Vercel CLI](https://vercel.com/cli):
+**Note: Delete this note and update the table of contents based on what sections you keep.**
 
-```sh
-npm i -g vercel
-vercel
-```
+## Overview
 
-It is generally recommended to use a Git repository, because future commits will then automatically be deployed by Vercel, through its [Git Integration](https://vercel.com/docs/concepts/git).
+### The challenge
 
-## Development
+Users should be able to:
 
-To run your Remix app locally, make sure your project's local dependencies are installed:
+- See all countries from the API on the homepage
+- Search for a country using an `input` field
+- Filter countries by region
+- Click on a country to see more detailed information on a separate page
+- Click through to the border countries on the detail page
+- Toggle the color scheme between light and dark mode _(optional)_
 
-```sh
-npm install
-```
+### Links
 
-Afterwards, start the Remix development server like so:
+- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/rest-countries-api-with-color-theme-switcher-ScEh9b-z1p)
+- Live Site URL: [Add live site URL here](https://countries-app-jet-tau.vercel.app/)
 
-```sh
-npm run dev
-```
+## My process
 
-Open up [http://localhost:3000](http://localhost:3000) and you should be ready to go!
+### Built with
 
-If you're used to using the `vercel dev` command provided by [Vercel CLI](https://vercel.com/cli) instead, you can also use that, but it's not needed.
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
+- [Remix](https://remix-run/) - Full-Stack JS Framework
+- [Tailwind CSS](https://tailwindcss.com/) - For styles
+
+### What I learned
+
+Main learning point was fetching data and also implementing the theme switcher
+
+### Continued development
+
+If I ever decide to perfect this, I'd make it so that the page keeps the dark mode state over refreshes/the actual user.
+
+## Author
+
+- Frontend Mentor - [@kubahasek](https://www.frontendmentor.io/profile/kubahasek)
+- Twitter - [@kuba_hasek](https://twitter.com/kuba_hasek)
+
+## Acknowledgments
+
+I'd like to thank Emil Bryggare from the Remix Discord community who helped me get through an issue with fetching from the API twice, depending on the data from the first fetch.
