@@ -10,6 +10,9 @@ module.exports = {
       lightgray: "hsl(0, 0%, 98%)",
       white: "hsl(0, 0%, 100%)",
     },
+    fontFamily: {
+      sans: ["Nunito Sans", "sans-serif"],
+    },
     extend: {},
   },
   plugins: [],

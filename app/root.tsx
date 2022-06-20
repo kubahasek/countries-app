@@ -27,12 +27,22 @@ function App() {
       <head>
         <Meta />
         <Links />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap"
+          rel="stylesheet"
+        />
         <script
           src="https://kit.fontawesome.com/e58aedf901.js"
           crossOrigin="anonymous"
         ></script>
       </head>
-      <body className="bg-lightgray dark:bg-darkbg">
+      <body className="font-sans bg-lightgray dark:bg-darkbg">
         <Outlet />
         <ScrollRestoration />
         <Scripts />
