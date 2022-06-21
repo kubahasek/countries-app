@@ -46,10 +46,15 @@ export const loader: LoaderFunction = async ({ params }) => {
     `https://restcountries.com/v3.1/alpha/${params.id}`
   );
   const data = await fetchRequest.json();
+  let borderCountriesData = undefined;
+  if (data.borders) {
+    borderCountriesData = await getBorderCountries(data[0].borders);
+  }
 
-  const borderCountriesData = await getBorderCountries(data[0].borders);
-
-  return { countryData: data[0], borderCountries: borderCountriesData };
+  return {
+    countryData: data[0],
+    borderCountries: borderCountriesData ? borderCountriesData : [],
+  };
 };
 
 export default function CountryDetail() {
@@ -124,19 +129,23 @@ export default function CountryDetail() {
             <div>
               <h2 className="text-xl font-bold mt-10">Border Countries:</h2>
               <div className="grid grid-cols-3 gap-3 mt-4 mb-10">
-                {borderCountries.map((borderCountry: Country) => (
-                  <Link
-                    key={borderCountry.name.common}
-                    to={`/country/${borderCountry.cca2}`}
-                  >
-                    <div
+                {borderCountries.length > 0 ? (
+                  borderCountries.map((borderCountry: Country) => (
+                    <Link
                       key={borderCountry.name.common}
-                      className="w-full text-sm p-3 shadow-xl text-center dark:bg-darkblue"
+                      to={`/country/${borderCountry.cca2}`}
                     >
-                      <p>{borderCountry.name.common}</p>
-                    </div>
-                  </Link>
-                ))}
+                      <div
+                        key={borderCountry.name.common}
+                        className="w-full text-sm p-3 shadow-xl text-center dark:bg-darkblue"
+                      >
+                        <p>{borderCountry.name.common}</p>
+                      </div>
+                    </Link>
+                  ))
+                ) : (
+                  <p className="text-xl mt-5">No border countries</p>
+                )}
               </div>
             </div>
           </div>
