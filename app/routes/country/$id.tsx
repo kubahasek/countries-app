@@ -47,7 +47,7 @@ export const loader: LoaderFunction = async ({ params }) => {
   );
   const data = await fetchRequest.json();
   let borderCountriesData = undefined;
-  if (data.borders) {
+  if (data[0].borders) {
     borderCountriesData = await getBorderCountries(data[0].borders);
   }
 
